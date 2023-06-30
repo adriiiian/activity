@@ -1,0 +1,18 @@
+{% extends "fastfood/layout.html" %}
+
+{% block body %}
+
+<p>Total before tax: ${{before_tax}}</p>
+<p>Tax: ${{tax}}</p>
+<p>Final Total: ${{total}}</p>
+<form action="{% url 'fastfood:payment' %}" method="post">
+    {% csrf_token %}
+    {{ form.final_total.as_hidden }}
+    {{form.money_rendered.label}}
+    {{ form.money_rendered }}
+    <input type="submit">
+</form>
+
+<!-- <p>{{total|floatformat:2}}</p> -->
+
+{% endblock %}

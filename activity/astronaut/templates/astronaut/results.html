@@ -1,0 +1,17 @@
+{% extends "astronaut/layout.html" %}
+
+{% block body %}
+
+<h1>name: {{name}}</h1>
+<h1>height: {{height}}</h1>
+{% if below %}
+    <h1>Sorry, {{name}}. Your height is below minimum astronaut height</h1>
+{% endif %}
+{% if above %}
+    <h1> Sorry {{name}}, Your height is above maximum astronaut height</h1>
+{% endif %}
+{% if correct %}
+    <h1>Congratulations {{name}}!, You have the correct height to be an astronaut</h1>
+{% endif %}
+
+{% endblock %}

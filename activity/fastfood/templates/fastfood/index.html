@@ -1,0 +1,12 @@
+{% extends "fastfood/layout.html" %}
+
+{% block body %}
+
+<form action="{% url 'fastfood:checkout' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+
+
+{% endblock %}

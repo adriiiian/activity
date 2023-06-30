@@ -1,0 +1,9 @@
+{% extends "fastfood/layout.html" %}
+
+{% block body %}
+
+<p>Final Total: ${{final_total|floatformat:2}}</p>
+<p>Money Rendered: ${{money_rendered|floatformat:2}}</p>
+<p>Change: ${{change|floatformat:2}}</p>
+
+{% endblock %}
